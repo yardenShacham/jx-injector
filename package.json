@@ -1,6 +1,6 @@
 {
   "name": "jx-injector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for dependency injector pattern",
   "author": "Yarden Shacham <yarden101111@gmail.com>",
   "license": "MIT",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "mocha src/**/*.spec.js",
-    "prod": "node tools/build"
+    "prod": "node rollup-build.js"
   },
   "dependencies": {
   },

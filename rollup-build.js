@@ -3,8 +3,7 @@
 const fs = require('fs');
 const del = require('del');
 const rollup = require('rollup');
-const pkg = require('../package.json');
-const babel = require('rollup-plugin-babel');
+const pkg = require('./package.json');
 const uglify = require('rollup-plugin-uglify');
 const minify = require('uglify-es').minify;
 

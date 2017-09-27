@@ -1,10 +1,11 @@
 {
   "name": "jx-injector",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Library for dependency injector pattern",
   "author": "Yarden Shacham <yarden101111@gmail.com>",
   "license": "MIT",
   "main": "index.js",
+  "jsnext:main": "jx-injector.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/yardenShacham/jx-injector.git"
@@ -12,15 +13,6 @@
   "bugs": {
     "url": "https://github.com/yardenShacham/jx-injector/issues",
     "email": "yarden101111@gmail.com"
-  },
-  "babel": {
-    "presets": [
-      "latest",
-      "stage-0"
-    ],
-    "plugins": [
-      "transform-runtime"
-    ]
   },
   "scripts": {
     "test": "mocha src/**/*.spec.js",

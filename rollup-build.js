@@ -13,7 +13,7 @@ const minify = require('uglify-es').minify;
 // Copy package.json and LICENSE.txt
 Promise.resolve().then(() => del(['dist/*']))
     .then(() => rollup.rollup({
-        entry: 'src/index.js',
+        entry: 'src/injector',
         external: Object.keys(pkg.dependencies),
         plugins: [],
     }).then(bundle => bundle.write({
@@ -22,7 +22,7 @@ Promise.resolve().then(() => del(['dist/*']))
         sourceMap: true,
         moduleName: pkg.name,
     })).then(() => rollup.rollup({
-        entry: 'src/index.js',
+        entry: 'src/injector',
         external: Object.keys(pkg.dependencies),
         plugins: [
             uglify({}, minify)

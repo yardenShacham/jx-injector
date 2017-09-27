@@ -1,1 +1,0 @@
-export {injector} from './injector'

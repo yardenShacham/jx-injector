@@ -15,7 +15,10 @@ export class injector {
     public registerSingleton(dependencyName: string, dependencyValue: any, onDemand?: boolean): void {
         if (dependencyName && dependencyValue) {
             if (onDemand) {
-                this.container[dependencyName] = dependencyValue;
+                this.container[dependencyName] = {
+                    onDemand,
+                    dependencyValue
+                };
             }
             else {
                 this.container[dependencyName] = new dependencyValue();
@@ -27,6 +30,11 @@ export class injector {
         if (this.container[dependencyName]) {
             if (typeof  this.container[dependencyName] === "function") {
                 return new this.container[dependencyName];
+            }
+            else if (this.container[dependencyName].onDemand
+                && this.container[dependencyName].onDemand === true) {
+                this.container[dependencyName] = new this.container[dependencyName].dependencyValue;
+                return this.container[dependencyName];
             }
             else
                 return this.container[dependencyName];

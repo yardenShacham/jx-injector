@@ -1,6 +1,5 @@
 export class injector {
     private container: { [key: string]: any }
-    private stack: any
 
     constructor() {
         this.container = {};
@@ -41,4 +40,3 @@ export class injector {
         }
     }
 }
-

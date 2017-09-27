@@ -1,6 +1,6 @@
 {
   "name": "jx-injector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library for dependency injector pattern",
   "author": "Yarden Shacham <yarden101111@gmail.com>",
   "license": "MIT",

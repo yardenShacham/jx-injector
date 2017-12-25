@@ -5,13 +5,15 @@ export class injector {
         this.container = {};
     }
 
-    public register(dependencyName: string, dependencyValue: any): void {
+    public register(dependencyName: string, dependencyValue: any): injector {
         if (dependencyName && dependencyValue) {
             this.container[dependencyName] = dependencyValue;
         }
+
+        return this;
     }
 
-    public registerSingleton(dependencyName: string, dependencyValue: any, onDemand?: boolean): void {
+    public registerSingleton(dependencyName: string, dependencyValue: any, onDemand?: boolean): injector {
         if (dependencyName && dependencyValue) {
             if (onDemand) {
                 this.container[dependencyName] = {
@@ -22,6 +24,15 @@ export class injector {
             else {
                 this.container[dependencyName] = new dependencyValue();
             }
+        }
+        return this;
+    }
+
+    public mergeContainers(container: any) {
+        let keys = Object.keys(container);
+        for (let i = 0; i < keys.length; i++) {
+            let currentKey = keys[i];
+            this.container[currentKey] = container[currentKey];
         }
     }
 
